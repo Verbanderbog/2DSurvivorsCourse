@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpwd60t1k7dm7"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_jgrh5"]
-[ext_resource type="PackedScene" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_3qm4f"]
+[ext_resource type="PackedScene" uid="uid://hdmv2fb1o5hi" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_3qm4f"]
 [ext_resource type="Texture2D" uid="uid://56smxxo2e24g" path="res://kenney_tinydungeon/Tiles/tile_0096.png" id="2_annut"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k841h"]
