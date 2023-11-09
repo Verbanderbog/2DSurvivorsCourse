@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://hdmv2fb1o5hi"]
+
+[ext_resource type="Script" path="res://scenes/Ability/sword_ability_controller/sword_ability_controller.gd" id="1_05g76"]
+[ext_resource type="PackedScene" uid="uid://bsyxkb64muia2" path="res://scenes/ability/sword_ability/sword_ability.tscn" id="2_aiymj"]
+
+[node name="SwordAbilityController" type="Node"]
+script = ExtResource("1_05g76")
+sword_ability = ExtResource("2_aiymj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

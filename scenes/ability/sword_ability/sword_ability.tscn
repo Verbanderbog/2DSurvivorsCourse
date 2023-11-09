@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsyxkb64muia2"]
+
+[ext_resource type="Texture2D" uid="uid://bqqcrc05bjmhi" path="res://kenney_tinydungeon/Tiles/tile_0104.png" id="1_pqeww"]
+
+[node name="SwordAbility" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pqeww")
+offset = Vector2(0, -4)

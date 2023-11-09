@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpwd60t1k7dm7"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_jgrh5"]
+[ext_resource type="PackedScene" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_3qm4f"]
+[ext_resource type="Texture2D" uid="uid://56smxxo2e24g" path="res://kenney_tinydungeon/Tiles/tile_0096.png" id="2_annut"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k841h"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 0
+script = ExtResource("1_jgrh5")
+
+[node name="AbilityManager" type="Node" parent="."]
+
+[node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_3qm4f")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_annut")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_k841h")
