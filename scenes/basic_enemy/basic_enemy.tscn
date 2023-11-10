@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_c36di"]
 radius = 5.0
 
-[node name="BasicEnemy" type="CharacterBody2D"]
+[node name="BasicEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 0
 script = ExtResource("1_peb28")
 
@@ -15,5 +15,5 @@ texture = ExtResource("2_a7vg3")
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_c36di")
