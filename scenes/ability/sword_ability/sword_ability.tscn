@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsyxkb64muia2"]
+[gd_scene load_steps=8 format=3 uid="uid://bsyxkb64muia2"]
 
+[ext_resource type="Script" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_kcy6o"]
 [ext_resource type="Texture2D" uid="uid://bqqcrc05bjmhi" path="res://kenney_tinydungeon/Tiles/tile_0104.png" id="1_pqeww"]
+[ext_resource type="PackedScene" uid="uid://cfq4l2buy73xp" path="res://scenes/component/hitbox_component.tscn" id="2_rjtin"]
 
 [sub_resource type="Animation" id="Animation_mxln6"]
 length = 0.001
@@ -31,7 +33,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -86,7 +88,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/3/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -102,10 +104,11 @@ _data = {
 "swing": SubResource("Animation_3lr27")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dft86"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8qay"]
 size = Vector2(30, 30)
 
 [node name="SwordAbility" type="Node2D"]
+script = ExtResource("1_kcy6o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "swing"
@@ -117,11 +120,9 @@ libraries = {
 texture = ExtResource("1_pqeww")
 offset = Vector2(0, -4)
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 0
+[node name="HitboxComponent" parent="." instance=ExtResource("2_rjtin")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(15, 0)
-shape = SubResource("RectangleShape2D_dft86")
+shape = SubResource("RectangleShape2D_w8qay")
 disabled = true
