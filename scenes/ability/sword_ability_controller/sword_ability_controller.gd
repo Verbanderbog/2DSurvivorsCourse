@@ -22,7 +22,7 @@ func on_timer_timeout():
 	enemies.sort_custom(func(a:Node2D, b:Node2D):
 		return a.global_position.distance_squared_to(player.global_position) < b.global_position.distance_squared_to(player.global_position)
 	)
-	var sword_instance = sword_ability.instantiate() as SwordAbility
+	var sword_instance = sword_ability.instantiate() as SwordAbility1
 	player.get_parent().add_child(sword_instance)
 	sword_instance.hitbox_component.damage = damage
 	sword_instance.global_position = enemies[0].global_position
